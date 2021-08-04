@@ -11,9 +11,10 @@
 .main-container
 {
     width: 100%;
-    height: 45vh;
+    height: 50vh;
     display: flex;
     align-items: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, #191B1F 95% );
 }
 
 .main-container img
@@ -22,20 +23,23 @@
     z-index: -1;
 }
 
-.second-container{
+.second-container
+{
     width: 100%;
-    min-height: 60vh;
+    min-height: 50vh;
     padding-bottom: 3em;
     background-color: #191B1F;
 }
 
-.second-container .container{
+.second-container .container
+{
     display: flex;
     justify-content: space-between;
     padding-top: 5em;
 }
 
-.main-info-card{
+.main-info-card
+{
     color: white;
     width: 50%;
     overflow-wrap: break-word;
@@ -43,30 +47,38 @@
     hyphens: auto;
 }
 
-.info-card-up h1{
+.info-card-up h1
+{
     margin-bottom: 30px;
     font-weight: 600;
 }
 
-.info-card-up span{
+.info-card-up span
+{
     color: #0D82EC;
     font-size: 5rem;
 }
 
-.button-area{
+.button-area
+{
     display: flex;
     flex-direction: column-reverse;
 }
 
-.btn-me{
+.btn-me
+{
     padding: 1em 2em 1em 2em;
     border: none;
     border-radius: 50px;
     color: white;
     background-color: #0D82EC;
+    box-shadow: 0 0 100px #0D82EC;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
-.btn-me:hover{
+.btn-me:hover
+{
     background-color: #034B94;
 }
