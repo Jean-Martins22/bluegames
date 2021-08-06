@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://azdzqgug:OfKkSBFGLAzhDvyH1BggTpnBOst1M_po@kesavan.db.elephantsql.com/azdzqgug'
 db = SQLAlchemy(app)
 
+
 class Jogo(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(150), nullable=False)
@@ -20,10 +21,11 @@ class Jogo(db.Model):
         self.descricao = descricao
         self.link = link
 
-if __name__ == '__main__':
-   db.create_all()
-   app.run(debug=True)
 
-sims = Jogo("The Sims","sims.png","Jogo de pessoa","www.sims.com")
-db.session.add(sims)
-db.session.commit()
+if __name__ == '__main__':
+    db.create_all()
+    app.run(debug=True)
+    
+    sims = Jogo("The Sims", "sims.png", "Jogo de pessoa", "www.sims.com")
+    db.session.add(sims)
+    db.session.commit()
