@@ -1,0 +1,546 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #191B1F;
+    font-family: 'Poppins', sans-serif;
+    color: #EAEBED;
+
+}
+
+#home {
+    padding-left: 10%;
+    padding-top: 25px;
+    width: 95%;
+}
+
+.menu-item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin: 20%;
+    background-color: #007bff;
+    transition: background-color .5s ease-in-out;
+    border-radius: 10px;
+    justify-content: center;
+    align-content: center;
+    cursor:pointer;
+}
+
+.menu-item:hover {
+    transition: background-color .5s ease-in-out;
+    background-color: #0056b3;
+}
+
+.menu-item img {
+    position: absolute;
+    display: block;
+    align-self: center;
+    width: 30px;
+    height: 30px;
+}
+
+
+#side-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-right: solid 2px #4040492a;
+    animation: 2s ease-out 0s 1 fromLeft;
+}
+
+header {
+    display: flex;
+    width: 100%;
+}
+
+
+
+
+#header-menu {
+    display: flex;
+    position: absolute;
+    right: 30px;
+    z-index: 10;
+}
+
+#header-menu a {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    transition: background-color .5s ease-in-out;
+    margin: 0;
+    margin-top: 20px;
+    border-radius: 25px;
+}
+
+#header-menu a img {
+    display: block;
+    margin: auto;
+    height: 35px;
+}
+
+#header-menu a:hover {
+    transition: background-color .5s ease-in-out;
+    background-color: #0056b3;
+}
+
+.search {
+    position: absolute;
+    top: 20px;
+    width: 40px;
+}
+
+#search {
+    border-radius: 20px;
+    transition: width 0.15s ease-in-out, width 0.15s ease-in-out;
+    width: 40px;
+    background: url(/style/img/search.png) no-repeat center;
+    background-size: 20px;
+    background-color: rgba(245, 245, 245, 0.062);
+    color: beige;
+}
+
+
+#search:focus {
+    width: 200px;
+    transition: width 0.15s ease-in-out, width 0.15s ease-in-out;
+    background: black;
+}
+
+
+
+.dash {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-left: 3%;
+    padding-left: 0%;
+}
+
+.banner {
+    display: flex;
+    background-color: rgba(245, 245, 245, 0.062);
+    height: 300px;
+    width: 1010px;
+    border-radius: 30px;
+    transition: width 2s, height 4s;
+    transition-delay: 1s;
+    animation: 2s ease-in-out 0s 1 fromTop;
+    backdrop-filter: blur(1px);
+    background-color: rgba(245, 245, 245, 0.062);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+
+.banner::before {
+    position: absolute;
+    width: 1010px;
+    height: 300px;
+    content: "";
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(45deg, black, grey);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.banner:hover::before {
+    opacity: 0;
+    background: linear-gradient(90deg, black, grey);
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    width: 1010px;
+    height: 300px;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(60deg, blue, red);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.banner:hover::after {
+    opacity: 1;
+    background: linear-gradient(45deg, blue, red);
+
+}
+
+.banner-block {
+    position: absolute;
+    width: 950px;
+    height: 300px;
+}
+
+.text-banner {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: ;
+    width: ;
+}
+
+.brand-new {
+    width: 40px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    border-radius: 3px;
+}
+
+.purchase-banner {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    left: 5%;
+    background-color: black;
+    width: 20%;
+    align-items: center;
+    height: 60px;
+    border-radius: 10px;
+}
+
+price {
+    position: absolute;
+    align-self: center;
+}
+
+.purchase {
+    position: absolute;
+    right: 5%;
+    padding: 10px;
+    z-index: 10;
+}
+
+.banner-img {
+    position: absolute;
+    right: 10%;
+    top: 2%;
+}
+
+.new-games {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+.new-games .card {
+    flex-wrap: wrap;
+    margin-top: 1%;
+    margin-inline: 30px;
+    width: 300px;
+    height: 230px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(245, 245, 245, 0.062);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    border-radius: 30px;
+    justify-content: center;
+    animation: 2s ease-in-out 0s 1 fromBottom;
+
+}
+
+.new-games .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(45deg, black, grey);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    transition: opacity 2s ease-out;
+}
+
+.new-games .card:hover::before {
+    opacity: 0;
+    background: linear-gradient(90deg, black, grey);
+}
+
+.new-games .card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(60deg, blue, red);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.new-games .card:hover::after {
+    opacity: 1;
+    background: linear-gradient(45deg, blue, red);
+
+}
+
+
+.card-img {
+    display: block;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-height: 150px;
+}
+
+.card h5 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.card .add-cart {
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    z-index: 2;
+    margin-right: 20px;
+    background-size: 35px;
+    width: 52px;
+    border-radius: 25px;
+    height: 52px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(245, 245, 245, 0.062);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.card .add-cart div {
+    display: flex;
+    content: "";
+    position: absolute;
+    width: 49px;
+    height: 49px;
+    left: 0;
+    background-color: #007bff;
+    border-radius: 25px;
+    top: 0;
+    z-index: -1;
+}
+
+.card .add-cart div img {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+}
+
+
+.card .add-cart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(45deg, red, blue);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    transition: opacity 2s ease-out;
+}
+
+.card .add-cart:hover::before {
+    opacity: 0;
+}
+
+.card .add-cart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(45deg, white, grey);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.card .add-cart:hover::after {
+    background: linear-gradient(60deg, white, grey);
+    opacity: 1;
+}
+
+.details {
+    display: block;
+    align-self: center;
+    width: 100px;
+    z-index: 2;
+}
+
+table th,
+td {
+    border-spacing: 0;
+    border: 1px solid white;
+}
+
+#shopping-cart {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    background-color: rgba(245, 245, 245, 0.062);
+    justify-content: center;
+    margin: auto;
+    top:50px;
+    left:18%;
+    width: 1010px;
+    height: 500px;
+    border-radius: 30px;
+    animation: 3s ease-in-out 0s 1 fromLeft;
+    backdrop-filter: blur(10px);
+    background-color: rgba(245, 245, 245, 0.062);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+
+#shopping-cart::before {
+    position: absolute;
+    width: 1010px;
+    height: 500px;
+    content: "";
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(45deg, black, grey);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+#shopping-cart:hover::before {
+    opacity: 0;
+    background: linear-gradient(90deg, black, grey);
+}
+
+#shopping-cart::after {
+    content: "";
+    position: absolute;
+    width: 1010px;
+    height: 500px;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(60deg, blue, red);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+#shopping-cart:hover::after {
+    opacity: 1;
+    background: linear-gradient(45deg, blue, red);
+
+}
+
+#shopping-cart button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 20;
+}
+#shopping-cart table{
+    position: absolute;
+    top: 100px;
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-150%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes fromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
