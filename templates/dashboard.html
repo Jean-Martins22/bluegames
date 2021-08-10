@@ -3,22 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style/css/bootstrap.min.css">
-    <link href="/style/css/style.css" rel="stylesheet">
-    <link rel="script" href="/style/js/script.js">
-    <title>Blue game</title>
+
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <title>BlueGames Dashboard</title>
 </head>
 
 <body>
     <header>
         <div id="header-menu">
             <a class='menu-item' href="">
-                <img src="/style/img/profile.png" alt="">
+                <img src="../static/img/profile.png" alt="">
             </a>
         </div>
     </header>
@@ -28,15 +23,15 @@
                 <input type="search" id="search" class="form-control" placeholder="" />
             </div>
             <a class='menu-item' href="">
-                <img src="/style/img/home.png" alt="" class='image-icons'>
+                <img src="../static/img/home.png" alt="" class='image-icons'>
             </a>
             <a class='menu-item' onclick="document.getElementById('shopping-cart').style.display='flex';">
-                <img src="/style/img/buying.png" alt="" class='image-icons'>
+                <img src="../static/img/buying.png" alt="" class='image-icons'>
             </a>
             <a class='menu-item' href="">
-                <img src="/style/img/view all.png" alt="" class='image-icons'>
+                <img src="../static/img/view all.png" alt="" class='image-icons'>
             </a>
-            
+
         </nav>
     </section>
     <section id="home">
@@ -54,7 +49,7 @@
                         </div>
                         <img src="https://dummyimage.com/300x250/000/fff" alt="" class="banner-img">
                         <div class="container purchase-banner">
-                            <price>${{}}</price>
+                            <price>2</price>
                             <button class='btn  btn-primary purchase'>
                                 Purchase
                             </button>
@@ -77,7 +72,7 @@
                             <button class='btn add-cart'>
 
                                 <div>
-                                    <img src="/style/img/buy.png" alt="">
+                                    <img src="../static/img/buy.png" alt="">
                                 </div>
                             </button>
                         </div>
@@ -93,7 +88,7 @@
                             </button>
                             <button class='btn add-cart'>
                                 <div>
-                                    <img src="/style/img/buy.png" alt="">
+                                    <img src="../static/img/buy.png" alt="">
                                 </div>
                             </button>
                         </div>
@@ -111,7 +106,7 @@
 
                             <button class='btn add-cart'>
                                 <div>
-                                    <img src="/style/img/buy.png" alt="">
+                                    <img src="../static/img/buy.png" alt="">
                                 </div>
                             </button>
 
@@ -161,18 +156,16 @@
 
         </div>
     </section>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+        </script>
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../static/js/script.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
-</script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/style/js/script.js"></script>
-
 </html>
