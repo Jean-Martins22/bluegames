@@ -47,6 +47,47 @@ def adm():
     return render_template('admin.html', games=games)
 
 
+@app.route('/add', methods=['GET', 'POST'])
+def add_game():
+    if request.method == 'POST':
+        game = Games(
+            request.form['title'],
+            request.form['max_players'],
+            request.form['genre'],
+            request.form['publisher'],
+            request.form['price'],
+            request.form['release_year'],
+        )
+        db.session.add(game)
+        db.session.commit()
+        return redirect('/admin')
+
+
+@app.route('/edit', methods=['GET', 'POST'])
+def edit_game():
+    id = request.form['id']
+    if request.method == 'POST':
+        gameEdit = Games.query.get(id)
+        gameEdit.title = request.form['title']
+        gameEdit.max_players = request.form['max_players']
+        gameEdit.genre = request.form['genre']
+        gameEdit.publisher = request.form['publisher']
+        gameEdit.price = request.form['price']
+        gameEdit.release_year = request.form['release_year']
+
+        db.session.commit()
+        return redirect('/admin')
+
+
+@app.route('/delete', methods=['GET', 'POST'])
+def delete_game():
+    id = request.form['id']
+    gameEdit = Games.query.get(id)
+    db.session.delete(gameEdit)
+    db.session.commit()
+    return redirect('/admin')
+
+
 if __name__ == '__main__':
     # db.create_all()
     app.run(debug=True)
