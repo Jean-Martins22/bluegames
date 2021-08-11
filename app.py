@@ -36,8 +36,13 @@ class Games(db.Model):
 
 
 @app.route('/gameslist')
-@app.route('/admin')
 def gamelist():
+    games = Games.query.all()
+    return render_template('gameslist.html', games=games)
+
+
+@app.route('/admin')
+def adm():
     games = Games.query.all()
     return render_template('admin.html', games=games)
 
