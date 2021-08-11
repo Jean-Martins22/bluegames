@@ -205,8 +205,6 @@ header {
     position: absolute;
     top: 10%;
     left: 5%;
-    background-color: ;
-    width: ;
 }
 
 .brand-new {
@@ -264,10 +262,9 @@ price {
 
 .new-games .card {
     flex-wrap: wrap;
-    margin-top: 1%;
-    margin-inline: 30px;
-    width: 300px;
-    height: 230px;
+    margin: 1.2em;
+    width: 270px;
+    height: 270px;
     backdrop-filter: blur(1px);
     background-color: rgba(245, 245, 245, 0.062);
     -webkit-backdrop-filter: blur(20px);
@@ -277,7 +274,6 @@ price {
     border-radius: 30px;
     justify-content: center;
     animation: 2s ease-in-out 0s 1 fromBottom;
-
 }
 
 .new-games .card::before {
@@ -325,23 +321,17 @@ price {
 .new-games .card:hover::after {
     opacity: 1;
     background: linear-gradient(45deg, blue, red);
-
 }
 
 
 .card-img {
-    display: block;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1.3em auto;
     width: 50%;
     max-height: 150px;
 }
 
 .card h5 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1.3em auto;
     text-align: center;
     width: 80%;
 }

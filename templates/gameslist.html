@@ -28,7 +28,7 @@
             <a class='menu-item' onclick="document.getElementById('shopping-cart').style.display='flex';">
                 <img src="../static/img/buying.png" alt="" class='image-icons'>
             </a>
-            <a class='menu-item' href="gameslist">
+            <a class='menu-item' href="">
                 <img src="../static/img/view all.png" alt="" class='image-icons'>
             </a>
 
@@ -37,83 +37,25 @@
     <section id="home">
         <div class="container content">
             <div class='dash'>
-                <div class='banner' img=''>
-                    <div class='banner-block'>
-                        <div class='text-banner'>
-                            <div class='brand-new'>
-                                <p>New</p>
-                            </div>
-
-                            <h2>JOGO LEGAL : Melhor jogo</h2>
-
-                        </div>
-                        <img src="https://dummyimage.com/300x250/000/fff" alt="" class="banner-img">
-                        <div class="container purchase-banner">
-                            <price>2</price>
-                            <button class='btn  btn-primary purchase'>
-                                Purchase
-                            </button>
-                        </div>
-                    </div>
-                </div>
                 <div class='new-games'>
-                    <h2>Ultimos jogos adicionados</h2>
                     <div class="cards">
+                        {% for game in games %}
                         <div class='card'>
-
                             <img src="https://dummyimage.com/150x100/000/fff" alt="" class="card-img">
-
                             <h5>
-                                Lorem ipsum dolor
+                                {{ game.title }}
                             </h5>
                             <button class='btn  btn-primary details'
                                 onclick="document.getElementById('game-info').style.display='flex';">
                                 Details
                             </button>
                             <button class='btn add-cart'>
-
                                 <div>
                                     <img src="../static/img/buy.png" alt="">
                                 </div>
                             </button>
                         </div>
-                        <div class='card'>
-
-                            <img src="https://dummyimage.com/150x100/000/fff" alt="" class="card-img">
-
-                            <h5>
-                                Lorem ipsum dolor
-                            </h5>
-                            <button class='btn  btn-primary details'>
-                                Details
-                            </button>
-                            <button class='btn add-cart'>
-                                <div>
-                                    <img src="../static/img/buy.png" alt="">
-                                </div>
-                            </button>
-                        </div>
-                        <div class='card'>
-
-                            <img src="https://dummyimage.com/150x100/000/fff" alt="" class="card-img">
-
-                            <h5>
-                                Lorem ipsum dolor
-                            </h5>
-
-                            <button class='btn  btn-primary details'>
-                                Details
-                            </button>
-
-                            <button class='btn add-cart'>
-                                <div>
-                                    <img src="../static/img/buy.png" alt="">
-                                </div>
-                            </button>
-
-                        </div>
-
-
+                        {% endfor %}
                     </div>
                 </div>
             </div>

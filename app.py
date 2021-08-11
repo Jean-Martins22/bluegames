@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://azdzqgug:OfKkSBFGLAzhDvyH1BggTpnBOst1M_po@kesavan.db.elephantsql.com/azdzqgug'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tmdbmgbz:TaQhYFew5JO6OxG_X3Vwq-UyP5FzqmTL@kesavan.db.elephantsql.com/tmdbmgbz'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -16,18 +16,29 @@ def home():
 def dash():
     return render_template('dashboard.html')
 
-# class Jogo(db.Model):
-#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     nome = db.Column(db.String(150), nullable=False)
-#     imagem = db.Column(db.String(500), nullable=False)
-#     descricao = db.Column(db.String(500), nullable=False)
-#     link = db.Column(db.String(300), nullable=False)
 
-#     def __init__(self, nome, imagem, descricao, link):
-#         self.nome = nome
-#         self.imagem = imagem
-#         self.descricao = descricao
-#         self.link = link
+class Games(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(52), nullable=True)
+    max_players = db.Column(db.Integer, nullable=True)
+    genre = db.Column(db.String(52), nullable=True)
+    publisher = db.Column(db.String(20), nullable=True)
+    price = db.Column(db.Float, nullable=True)
+    release_year = db.Column(db.Integer, nullable=True)
+
+    def __init__(self, title, max_players, genre, publisher, price, release_year):
+        self.title = title
+        self.max_players = max_players
+        self.genre = genre
+        self.publisher = publisher
+        self.price = price
+        self.release_year = release_year
+
+
+@app.route('/gameslist')
+def gamelist():
+    games = Games.query.all()
+    return render_template('gameslist.html', games=games)
 
 
 if __name__ == '__main__':
