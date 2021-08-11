@@ -12,11 +12,6 @@ def home():
     return render_template('landing_page.html')
 
 
-@app.route('/dashboard')
-def dash():
-    return render_template('dashboard.html')
-
-
 class Games(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(52), nullable=True)
@@ -25,6 +20,8 @@ class Games(db.Model):
     publisher = db.Column(db.String(20), nullable=True)
     price = db.Column(db.Float, nullable=True)
     release_year = db.Column(db.Integer, nullable=True)
+    # brand_new = db.Column(db.Boolean, nullable=False)
+
 
     def __init__(self, title, max_players, genre, publisher, price, release_year):
         self.title = title
@@ -34,7 +31,11 @@ class Games(db.Model):
         self.price = price
         self.release_year = release_year
 
-
+@app.route('/dashboard')
+def dash():
+    games = Games.query.all()
+    return render_template('dashboard.html',games=games)
+    
 @app.route('/gameslist')
 def gamelist():
     games = Games.query.all()
@@ -46,6 +47,20 @@ def adm():
     games = Games.query.all()
     return render_template('admin.html', games=games)
 
+@app.route('/admin/<id>', methods=['GET','POST'])
+def edit(id):
+   gameEdit = Games.query.get(id)
+   if request.method == 'POST':
+      gameEdit.title = request.form['title']
+      gameEdit.genre = request.form['genre']
+      gameEdit.max_players = request.form['max_players']
+      gameEdit.price = request.form['price']
+      gameEdit.publisher = request.form['publisher']
+      gameEdit.release_year = request.form['release_year']
+      db.session.commit()
+      return redirect('/admin')
+
+   return render_template('admin.html', gameEdit=gameEdit)
 
 if __name__ == '__main__':
     # db.create_all()
