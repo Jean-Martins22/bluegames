@@ -22,7 +22,13 @@ body {
     border-right: solid 2px #4040492a;
 }
 
+.side-menu nav a:first-child{
+    background-color: black;
+}
+
 .menu-item {
+    color: white;
+    cursor: pointer;
     display: flex;
     border-radius: 10px;
     justify-content: center;
@@ -33,32 +39,35 @@ body {
     margin: 20%;
 }
 
-.menu-item:hover {
+.menu-item i{
+    font-size: 1.3em;
+    margin: 0 0 0 1.5em;
+}
+
+.menu-item p{
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.menu-item:hover{
     transition: background-color .2s ease-in-out;
-    background-color: #0056b3;
+    color: white;
+    background-color: black;
     text-decoration: none;
 }
 
-.menu-item i {
-    display: block;
-    align-self: center;
-    font-size: 1.5em;
-    color: white;
-    filter: brightness(70%);
-}
-
-.menu-item i:hover {
-    -webkit-filter: drop-shadow(0px 0px 1px #ffff);
-    filter: drop-shadow(0px 0px 1px #ffff);
-}
-
-.main-content {
-    margin: 3em 5em 0 15em;
+.main-content{
+    margin: 4em 5em 0 17em;
 }
 
 .main-content h1 {
     color: #EAEBED;
-    margin-bottom: 1em;
+    margin-bottom: .7em;
+}
+
+.main-content p{
+    color: lightgray;
+    margin-bottom: 3em;
 }
 
 .list-games {
@@ -79,5 +88,9 @@ body {
 
 form {
     color: white;
-    width: 50%;
+    width: 30%;
+}
+
+form button{
+    margin-top: 2em;
 }

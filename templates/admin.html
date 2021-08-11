@@ -3,14 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-
     <!-- BoxIcons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.min.css">
     <!-- My Styling -->
     <link rel="stylesheet" href="../static/css/admin.css">
-
     <title>BlueGames Admin</title>
 </head>
 
@@ -18,17 +16,25 @@
 
     <section >
         <nav id="side-menu">
-            <a class='menu-item' href="/admin">
+            <a class='menu-item'>
                 <i class='bx bx-list-ul'></i>
+                <p>Listar</p>
             </a>
-            <a class='menu-item'>
+            <a class='menu-item add-click'>
                 <i class='bx bx-plus'></i>
+                <p>Adicionar</p>
             </a>
-            <a class='menu-item'>
+            <a class='menu-item edit-click'>
                 <i class='bx bxs-edit-alt'></i>
+                <p>Editar</p>
             </a>
-            <a class='menu-item'>
-                <i class='bx bxs-trash-alt'></i>
+            <a class='menu-item delete-click'>
+                <i class='bx bx-trash'></i>
+                <p>Deletar</p>
+            </a>
+            <a class='menu-item delete-click' href="dashboard">
+                <i class='bx bx-log-out-circle'></i>
+                <p>Sair</p>
             </a>
         </nav>
     </section>
@@ -72,32 +78,33 @@
     <section class="main-content">
         <div class="add-games">
             <h1>Adicionar Novo Jogo</h1>
-            <form>
+            <p>Informe os campos abaixo para que o jogo seja adicionado no banco de dados.</p>
+            <form action='/add' method="POST">
                 <div class="mb-3">
-                    <label for="title" class="form-label">Game Title</label>
-                    <input type="text" class="form-control" id="title">
+                    <label for="title" class="form-label">Título</label>
+                    <input type="text" class="form-control" name="title" placeholder="Mario Kart 8">
                 </div>
                 <div class="mb-3">
-                    <label for="max_players" class="form-label">Max Players</label>
-                    <input type="text" class="form-control" id="max_players">
+                    <label for="max_players" class="form-label">Nº Máximo de Jogadores</label>
+                    <input type="text" class="form-control" name="max_players" placeholder="4">
                 </div>
                 <div class="mb-3">
-                    <label for="genre" class="form-label">Genre</label>
-                    <input type="text" class="form-control" id="genre">
+                    <label for="genre" class="form-label">Gênero</label>
+                    <input type="text" class="form-control" name="genre" placeholder="Corrida">
                 </div>
                 <div class="mb-3">
-                    <label for="publisher" class="form-label">Publisher</label>
-                    <input type="text" class="form-control" id="publisher">
+                    <label for="publisher" class="form-label">Publicadora</label>
+                    <input type="text" class="form-control" name="publisher" placeholder="Nintendo">
                 </div>
                 <div class="mb-3">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="text" class="form-control" id="price">
+                    <label for="price" class="form-label">Preço</label>
+                    <input type="text" class="form-control" name="price" placeholder="34.90">
                 </div>
                 <div class="mb-3">
-                    <label for="release_year" class="form-label">Release Year</label>
-                    <input type="text" class="form-control" id="release_year">
+                    <label for="release_year" class="form-label">Ano de Lançamento</label>
+                    <input type="text" class="form-control" name="release_year" placeholder="2018">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary btn-md">Adicionar Jogo</button>
             </form>
         </div>
     </section>
@@ -107,7 +114,8 @@
     <section class="main-content">
         <div class="edit-games">
             <h1>Editar Jogo</h1>
-            <form>
+            <p>Informe o ID do jogo em seguida dos campos já atualizados.</p>
+            <form action='/edit' method="POST">
                 <div class="mb-3">
                     <label for="id" class="form-label">Id</label>
                     <input type="text" class="form-control" placeholder="Id" id="id" name="id" value="{{gameEdit.id}}">
@@ -133,10 +141,10 @@
                     <input type="text" class="form-control" placeholder="00,00" id="price" name="price" value="price">
                 </div>
                 <div class="mb-3">
-                    <label for="release_year" class="form-label">Release Year</label>
-                    <input type="text" class="form-control" id="release_year">
+                    <label for="release_year" class="form-label">Ano de Lançamento</label>
+                    <input type="text" class="form-control" name="release_year" placeholder="2018">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary btn-md">Editar Jogo</button>
             </form>
         </div>
     </section>
@@ -145,12 +153,13 @@
     <section class="main-content">
         <div class="delete-games">
             <h1>Deletar Jogo</h1>
-            <form>
+            <p>Informe o ID do jogo que será deletado.</p>
+            <form action='/delete' method="POST">
                 <div class="mb-3">
-                    <label for="id" class="form-label">Id</label>
-                    <input type="text" class="form-control" id="id">
+                    <label for="id" class="form-label">Id (Único)</label>
+                    <input type="text" class="form-control" name="id" placeholder="34">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Deletar Jogo</button>
             </form>
         </div>
     </section>
