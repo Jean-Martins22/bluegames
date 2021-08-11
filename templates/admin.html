@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.min.css">
+    <!-- My Styling -->
+    <link rel="stylesheet" href="../static/css/admin.css">
+
+    <title>BlueGames Admin</title>
+</head>
+
+<body>
+
+    <section class="side-menu">
+        <nav>
+            <a class='menu-item' href="">
+                <i class='bx bx-list-ul'></i>
+            </a>
+            <a class='menu-item' href="">
+                <i class='bx bx-plus'></i>
+            </a>
+            <a class='menu-item' href="">
+                <i class='bx bxs-edit-alt'></i>
+            </a>
+            <a class='menu-item' href="">
+                <i class='bx bxs-trash-alt'></i>
+            </a>
+        </nav>
+    </section>
+
+    <section class="main-content">
+        <div class="list-games">
+            <h1>Listagem dos jogos</h1>
+            <table class="table table-dark table-hover table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Max Players</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Release Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in games %}
+                    <tr>
+                        <th scope="row">{{ game.id }}</th>
+                        <td>{{ game.title }}</td>
+                        <td>{{ game.max_players }}</td>
+                        <td>{{ game.genre }}</td>
+                        <td>{{ game.publisher }}</td>
+                        <td>{{ game.price }}$</td>
+                        <td>{{ game.release_year }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="add-games">
+            <h1>Adicionar Novo Jogo</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Game Title</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="mb-3">
+                    <label for="max_players" class="form-label">Max Players</label>
+                    <input type="text" class="form-control" id="max_players">
+                </div>
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre</label>
+                    <input type="text" class="form-control" id="genre">
+                </div>
+                <div class="mb-3">
+                    <label for="publisher" class="form-label">Publisher</label>
+                    <input type="text" class="form-control" id="publisher">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price">
+                </div>
+                <div class="mb-3">
+                    <label for="release_year" class="form-label">Release Year</label>
+                    <input type="text" class="form-control" id="release_year">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="edit-games">
+            <h1>Editar Jogo</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id">
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Game Title</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="mb-3">
+                    <label for="max_players" class="form-label">Max Players</label>
+                    <input type="text" class="form-control" id="max_players">
+                </div>
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre</label>
+                    <input type="text" class="form-control" id="genre">
+                </div>
+                <div class="mb-3">
+                    <label for="publisher" class="form-label">Publisher</label>
+                    <input type="text" class="form-control" id="publisher">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price">
+                </div>
+                <div class="mb-3">
+                    <label for="release_year" class="form-label">Release Year</label>
+                    <input type="text" class="form-control" id="release_year">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="delete-games">
+            <h1>Deletar Jogo</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+    
+    <script src="../static/js/admin.js"></script>
+</body>
+
+</html>
