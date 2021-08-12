@@ -2,6 +2,7 @@
 
 *{
     font-family: 'Poppins', sans-serif;
+    /* border: solid 1px black; */
 }
 
 body {
@@ -67,8 +68,6 @@ header {
     display: flex;
     width: 100%;
 }
-
-
 
 
 #header-menu {
@@ -196,7 +195,7 @@ header {
 }
 
 .banner-block {
-    background-image: url(/style/img/capa-spiderman.jpg);
+    background-image: url(/static/img/capa-spiderman.jpg);
     background-size: cover;
     position: absolute;
     width: 1010px;
@@ -209,11 +208,6 @@ header {
     position: absolute;
     top: 10%;
     left: 5%;
-<<<<<<< Updated upstream:static/css/dashboard.css
-=======
-
-
->>>>>>> Stashed changes:style/css/style.css
 }
 
 .text-banner h2{
@@ -267,7 +261,6 @@ price {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    margin-left:;
 }
 .new-games h2 {
     margin-left: 50px;
@@ -276,44 +269,32 @@ price {
 }
 .cards {
     display: flex;
+    width: 1010px;
     flex-wrap: wrap;
-    margin-left: 20px;
+    margin-left: 30px;
     justify-content: space-around;
-    z-index: 1;
+    z-index: 1; 
+
 }
 
 .new-games .card {
-    flex-wrap: wrap;
-<<<<<<< Updated upstream:static/css/dashboard.css
-    margin: 1.2em;
-    width: 270px;
-    height: 270px;
-    backdrop-filter: blur(1px);
-    background-color: rgba(245, 245, 245, 0.062);
-=======
     margin-top: 1%;
-    margin-inline: 30px;
+    margin-inline: 1px;
     width: 300px;
     height: 230px;
     background-color: #191B1F;
     border: none;
+
     /* backdrop-filter: blur(1px);
     background-color: #191B1F;
->>>>>>> Stashed changes:style/css/style.css
     -webkit-backdrop-filter: blur(20px);
     -webkit-box-shadow: 0 8px 6px -6px black;
     -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0 8px 6px -6px black;
-<<<<<<< Updated upstream:static/css/dashboard.css
-    border-radius: 30px;
-    justify-content: center;
-    animation: 2s ease-in-out 0s 1 fromBottom;
-=======
     border-radius: 30px; */
     /* justify-content: center;
     animation: 2s ease-in-out 0s 1 fromBottom; */
 
->>>>>>> Stashed changes:style/css/style.css
 }
 
 /* .new-games .card::before {
@@ -365,30 +346,21 @@ price {
 
 
 .card-img {
-<<<<<<< Updated upstream:static/css/dashboard.css
-    margin: 0 auto 1.3em auto;
-    width: 50%;
-=======
     display: block;
     margin-top: 0;
     margin-left: 0  ;
     margin-right: auto;
     border-radius: 25px;
->>>>>>> Stashed changes:style/css/style.css
     max-height: 150px;
     max-width: 200px;
 }
 
 .card h5 {
-<<<<<<< Updated upstream:static/css/dashboard.css
-    margin: 0 auto 1.3em auto;
-=======
     display: block;
     margin-top: 5%;
     padding-left: 0;
     margin-right: auto;
     margin-bottom: 1%;
->>>>>>> Stashed changes:style/css/style.css
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
@@ -485,6 +457,11 @@ price {
     background: linear-gradient(60deg, white, grey);
     opacity: 1;
 }
+.card button{
+    text-align: center;
+    align-self: flex-start;
+    margin-top: 10px;
+}
 
 .details {
     display: block;
@@ -577,7 +554,6 @@ table {
     background-color: #007bff;
     background-size: 30px;
 }
-
 .close-button:hover {
     transition: background-color .5s ease-in-out;
     color:black;
@@ -588,7 +564,7 @@ table {
     position: absolute;
     top: 100px;
 }
-#game-info div{
+.game-info div{
     position: absolute;
     top: 50%;
     right: 10%;
@@ -596,17 +572,22 @@ table {
     height: 50%;
     
 }
-#game-info img{
+.game-info iframe{
     position: absolute;
     top: 50%;
     left: 10%;
+    width: 35%;
+    height: 45%;
+    border-radius: 25px;
 }
-#game-info h2{
+.game-info h2{
     position: absolute;
     top: 20%;
     left: 10%;
+    font-weight: bolder;
+    font-size: xx-large;
 }
-#game-info .btn-primary{
+.game-info .btn-primary{
     position: absolute;
     right: 0;
 }
@@ -728,7 +709,11 @@ section#dev {
     max-height: 700px;
     font-size: 11px;
   }
-
+  
+  .iframe-youtube{
+      display: flex;
+      justify-content: flex-start;
+  }
 @keyframes fromLeft {
     0% {
         transform: translateX(-150%);
