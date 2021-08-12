@@ -3,17 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 
-
-
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tmdbmgbz:TaQhYFew5JO6OxG_X3Vwq-UyP5FzqmTL@kesavan.db.elephantsql.com/tmdbmgbz'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+
 @app.context_processor
 def handle_context():
     return dict(os=os)
+
 
 class Games(db.Model):
     id = db.Column(
@@ -78,12 +77,7 @@ def go_adm():
     return render_template('admin.html', games=games)
 
 
-@app.route('/add')
-def go_add():
-    return render_template()
-
-
-@app.route('/add_game', methods=['GET', 'POST'])
+@app.route('/add', methods=['GET', 'POST'])
 def adm_add():
     if request.method == 'POST':
         game = Games(
