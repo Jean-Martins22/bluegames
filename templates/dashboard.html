@@ -10,23 +10,19 @@
 </head>
 
 <body>
-    <header>
-        <div id="header-menu">
-            <a class='menu-item' href="">
-                <img src="../static/img/profile.png" alt="">
-            </a>
-        </div>
-    </header>
     <section id="">
         <nav id='side-menu'>
             <div class="form-outline search">
                 <input type="search" id="search" class="form-control" placeholder="" />
             </div>
-            <a class='menu-item' onclick="sectionDisplay('home'); sectionHide('all-games')">
+            <a class='menu-item' onclick="sectionDisplay('home'); sectionHide('all-games');sectionHide('developers')">
                 <img src="../static/img/home.png" alt="" class='image-icons'>
             </a>
-            <a class='menu-item' onclick="sectionDisplay('all-games'); sectionHide('home')">
+            <a class='menu-item' onclick="sectionDisplay('all-games'); sectionHide('home');sectionHide('developers')">
                 <img src="../static/img/view all.png" alt="" class='image-icons'>
+            </a>
+            <a class='menu-item' onclick="sectionDisplay('developers')">
+                <img src="../static/img/staff.png" alt="" class='image-icons'>
             </a>
             <a class="menu-item" onclick="" href="/admin">
                 <img src="../static/img/settings.png" alt="" class="image-icons">
@@ -90,27 +86,18 @@
                                 onclick="document.getElementById('game-info2').style.display='flex';">
                                 Details
                             </button>
-
                         </div>
-
-
-
                         <div class='card'>
-
                             <img src="/static/img/capa-godofwar.jpg" alt="" class="card-img">
-
                             <h5>
                                 God Of War
                             </h5>
-                            
                             <a href='https://store.playstation.com/pt-br/product/UP9000-CUSA07408_00-00000000GODOFWAR/'>
                                 <img src='/static/img/playstation.png'></a>
-
                             <button class='btn  btn-primary details'
                                 onclick="document.getElementById('game-info3').style.display='flex';">
                                 Details
                             </button>
-
                         </div>
                     </div>
                 </div>
@@ -124,7 +111,7 @@
                     <div class="cards">
                         {% for game in games %}
                         <div class='card'>
-                            <img src="https://dummyimage.com/150x100/000/fff" alt="" class="card-img">
+                            <img src="/static/img/game-covers/{{game.title}}.jpg" alt="" class="card-img">
                             <h5>
                                 {{ game.title }}
                             </h5>
@@ -173,8 +160,7 @@
     </div>
     <div class="overlay game-info" id="game-info1">
         <h2>Marvel's Spider-Man: Myles Morales</h2>
-        <button class='btn close-button' style='background-color: #F85251; ;'
-            onclick="document.getElementById('game-info1').style.display= 'none';">
+        <button class='btn close-button' onclick="document.getElementById('game-info1').style.display= 'none';">
             X
         </button>
         <iframe src="https://www.youtube.com/embed/xJQI7BYDkV8"></iframe>
@@ -191,8 +177,7 @@
     <div class="overlay game-info" id="game-info2">
         <h2>League Of Legends</h2>
 
-        <button class='btn close-button' style='background-color: #F85251; ;'
-            onclick="document.getElementById('game-info2').style.display= 'none';">
+        <button class='btn close-button' onclick="document.getElementById('game-info2').style.display= 'none';">
             X
         </button>
 
@@ -211,8 +196,7 @@
     <div class="overlay game-info" id="game-info3">
         <h2>God Of War</h2>
 
-        <button class='btn close-button' style='background-color: #F85251; ;'
-            onclick="document.getElementById('game-info3').style.display= 'none';">
+        <button class='btn close-button' onclick="document.getElementById('game-info3').style.display= 'none';">
             X
         </button>
 
@@ -232,78 +216,89 @@
 
     <div id="developers">
         <section id="dev">
-            
+
             <div class="profile-card">
-                <button class='btn close-button' style='background-color: #F85251; ;'
-            onclick="document.getElementById('developers').style.display= 'none';">
-            X
+                <button class='btn btn-primary close-button'
+                    onclick="document.getElementById('developers').style.display= 'none';">
+                    X
                 </button>
-                    <img id='profile-photos' src="../static/img/Akylles Barros.png" alt="Foto do Akylles Barros">
-               <h2>Akylles</h2>
-               <p id='profile-description'>Como eu posso estar quebrando as regras se eu nem as conheço</p>
-               <div class="links">
-                    <a href='https://www.linkedin.com/in/akyllesbarros' target="_blank"><img src='../static/img/linkedin.png'></a>
-                    <a href='https://github.com/Akyllesbarros' target="_blank"><img src='../static/img/github.png' ></a>
-                    <a href='https://www.linkedin.com/in/akyllesbarros' target="_blank"><img src='../static/img/instagram.png'></a>
+                <img id='profile-photos' src="../static/img/Akylles Barros.png" alt="Foto do Akylles Barros">
+                <h2>Akylles</h2>
+                <p id='profile-description'>Como eu posso estar quebrando as regras se eu nem as conheço</p>
+                <div class="links">
+                    <a href='https://www.linkedin.com/in/akyllesbarros' target="_blank"><img
+                            src='../static/img/linkedin.png'></a>
+                    <a href='https://github.com/Akyllesbarros' target="_blank"><img src='../static/img/github.png'></a>
+                    <a href='https://www.linkedin.com/in/akyllesbarros' target="_blank"><img
+                            src='../static/img/instagram.png'></a>
                 </div>
             </div>
 
             <div class="profile-card">
-                    <img id='profile-photos' src="../static/img/Caio Manfredini.jpg" alt="Foto do Caio Manfredini">
-               <h2>Caio</h2>
-               <p id='profile-description'>Faço o que os outros não fariam... Isso por si só é inovação</p>
-               <div class="links">
-                    <a href='https://www.linkedin.com/in/caio-manfredini/' target="_blank"><img src='../static/img/linkedin.png'></a>
-                    <a href='https://github.com/cmanfeed' target="_blank"><img src='../static/img/github.png' ></a>
-                    <a href='https://www.instagram.com/cmanfeed' target="_blank"><img src='../static/img/instagram.png'></a>
+                <img id='profile-photos' src="../static/img/Caio Manfredini.jpg" alt="Foto do Caio Manfredini">
+                <h2>Caio</h2>
+                <p id='profile-description'>Faço o que os outros não fariam... Isso por si só é inovação</p>
+                <div class="links">
+                    <a href='https://www.linkedin.com/in/caio-manfredini/' target="_blank"><img
+                            src='../static/img/linkedin.png'></a>
+                    <a href='https://github.com/cmanfeed' target="_blank"><img src='../static/img/github.png'></a>
+                    <a href='https://www.instagram.com/cmanfeed' target="_blank"><img
+                            src='../static/img/instagram.png'></a>
                 </div>
             </div>
-      
+
             <div class="profile-card">
-                    <img id='profile-photos' src="../static/img/Emily.jpg" alt="Foto da Emily">
-               <h2>Emily</h2>
-               <p id='profile-description'>A essência de algo é encontrada em sua ausência</p>
-               <div class="links">
-                    <a href='https://www.linkedin.com/in/emily-alessandra-1536751a1/' target="_blank"><img src='../static/img/linkedin.png'></a>
+                <img id='profile-photos' src="../static/img/Emily.jpg" alt="Foto da Emily">
+                <h2>Emily</h2>
+                <p id='profile-description'>A essência de algo é encontrada em sua ausência</p>
+                <div class="links">
+                    <a href='https://www.linkedin.com/in/emily-alessandra-1536751a1/' target="_blank"><img
+                            src='../static/img/linkedin.png'></a>
                     <a href='https://github.com/emilyale' target="_blank"><img src='../static/img/github.png'></a>
-                    <a href='https://www.instagram.com/emiily_020/' target="_blank"><img src='../static/img/instagram.png'></a>
-                </div>
-            </div>
-      
-            <div class="profile-card">
-                    <img id='profile-photos' src="../static/img/Jean Martins.jpg" alt="Foto do Jean Martins">
-               <h2>Jean</h2>
-               <p id='profile-description'>O lance não é quanto tempo você tem é como você usa</p>
-               <div class="links">
-                    <a href='https://www.linkedin.com/in/jean-martins-5275a1213/' target="_blank"><img src='../static/img/linkedin.png'></a>
-                    <a href='https://github.com/Jean-Martins22' target="_blank"><img src='../static/img/github.png'></a>
-                    <a href='https://www.instagram.com/jean_marttiins/' target="_blank"><img src='../static/img/instagram.png'></a>
+                    <a href='https://www.instagram.com/emiily_020/' target="_blank"><img
+                            src='../static/img/instagram.png'></a>
                 </div>
             </div>
 
             <div class="profile-card">
-                    <img id='profile-photos' src="../static/img/Lucas Carneiro.jpg" alt="Foto do Lucas Carneiro">
+                <img id='profile-photos' src="../static/img/Jean Martins.jpg" alt="Foto do Jean Martins">
+                <h2>Jean</h2>
+                <p id='profile-description'>O lance não é quanto tempo você tem é como você usa</p>
+                <div class="links">
+                    <a href='https://www.linkedin.com/in/jean-martins-5275a1213/' target="_blank"><img
+                            src='../static/img/linkedin.png'></a>
+                    <a href='https://github.com/Jean-Martins22' target="_blank"><img src='../static/img/github.png'></a>
+                    <a href='https://www.instagram.com/jean_marttiins/' target="_blank"><img
+                            src='../static/img/instagram.png'></a>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <img id='profile-photos' src="../static/img/Lucas Carneiro.jpg" alt="Foto do Lucas Carneiro">
                 <h2>Lucas</h2>
                 <p id='profile-description'>Todos vestimos máscaras mas as minhas são bem confeccionadas</p>
                 <div class="links">
-                    <a href='https://www.linkedin.com/in/lucascarneirodev/' target="_blank"><img src='../static/img/linkedin.png'><a>
-                    <a href='https://github.com/lucascarneiro-dev' target="_blank"><img src='../static/img/github.png'></a>
-                    <a href='https://www.instagram.com/luks.car/' target="_blank"><img src='../static/img/instagram.png'></a>
+                    <a href='https://www.linkedin.com/in/lucascarneirodev/' target="_blank"><img
+                            src='../static/img/linkedin.png'><a>
+                            <a href='https://github.com/lucascarneiro-dev' target="_blank"><img
+                                    src='../static/img/github.png'></a>
+                            <a href='https://www.instagram.com/luks.car/' target="_blank"><img
+                                    src='../static/img/instagram.png'></a>
                 </div>
-             </div>
+            </div>
         </section>
 
     </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="../static/js/bootstrap/bootstrap.min.js"></script>
     <script src="../static/js/script.js"></script>
 </body>
