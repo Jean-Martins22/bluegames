@@ -14,30 +14,23 @@
 
 <body>
 
-    <section >
-        <nav id="side-menu">
-            <a class='menu-item' href="/admin">
+    <section>
+        <nav class="side-menu">
+            <a class='menu-item list-click' href="../admin">
                 <i class='bx bx-list-ul'></i>
                 <p>Listar</p>
             </a>
-            <a class='menu-item add-click' onclick='displayAddgames()' >
+            <a class='menu-item add-click'>
                 <i class='bx bx-plus '></i>
                 <p>Adicionar</p>
             </a>
-            <a class='menu-item edit-click'>
-                <i class='bx bxs-edit-alt'></i>
-                <p>Editar</p>
-            </a>
-            <a class='menu-item delete-click'>
-                <i class='bx bx-trash'></i>
-                <p>Deletar</p>
-            </a>
-            <a class='menu-item delete-click' href="/dashboard">
+            <a class='menu-item delete-click' href="../dash">
                 <i class='bx bx-log-out-circle'></i>
                 <p>Sair</p>
             </a>
         </nav>
     </section>
+
     {% if gameEdit == undefined %}
     <section class="main-content">
         <div class="list-games">
@@ -52,6 +45,7 @@
                         <th scope="col">Publisher</th>
                         <th scope="col">Price</th>
                         <th scope="col">Release Year</th>
+                        <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,8 +59,14 @@
                         <td>{{ game.price }}$</td>
                         <td>{{ game.release_year }}</td>
                         <td>
-                            <a href="/admin/{{game.id}}" class="edit-href">Editar</a>
-                            <a href="/delete/{{game.id}}">Apagar</a>
+                            <div class="botoes-acoes">
+                                <a href="/edit/{{game.id}}">
+                                    <button type="button" class="btn btn-primary">Editar</button>
+                                </a>
+                                <a href="/del/{{game.id}}">
+                                    <button type="button" class="btn btn-danger">Apagar</button>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}
@@ -115,33 +115,39 @@
         <div class="edit-games">
             <h1>Editar Jogo</h1>
             <p>Informe o ID do jogo em seguida dos campos já atualizados.</p>
-            <form action='/admin/{{gameEdit.id}}' method="POST">
+            <form action='/edit/{{gameEdit.id}}' method="POST">
                 <div class="mb-3">
                     <h2>Id nº {{gameEdit.id}}</h2>
                 </div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Game Title</label>
-                    <input type="text" class="form-control" placeholder="Game title" id="title" name="title" value="{{gameEdit.title}}">
+                    <input type="text" class="form-control" placeholder="Game title" id="title" name="title"
+                        value="{{gameEdit.title}}">
                 </div>
                 <div class="mb-3">
                     <label for="max_players" class="form-label">Max Players</label>
-                    <input type="text" class="form-control" placeholder="1" id="max_players" name="max_players" value="{{gameEdit.max_players}}">
+                    <input type="text" class="form-control" placeholder="1" id="max_players" name="max_players"
+                        value="{{gameEdit.max_players}}">
                 </div>
                 <div class="mb-3">
                     <label for="genre" class="form-label">Genre</label>
-                    <input type="text" class="form-control" placeholder="genre" id="genre" name="genre" value="{{gameEdit.genre}}">
+                    <input type="text" class="form-control" placeholder="genre" id="genre" name="genre"
+                        value="{{gameEdit.genre}}">
                 </div>
                 <div class="mb-3">
                     <label for="publisher" class="form-label">Publisher</label>
-                    <input type="text" class="form-control" placeholder="Publisher" id="publisher" name="publisher" value="{{gameEdit.publisher}}">
+                    <input type="text" class="form-control" placeholder="Publisher" id="publisher" name="publisher"
+                        value="{{gameEdit.publisher}}">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="text" class="form-control" placeholder="00,00" id="price" name="price" value="{{gameEdit.price}}">
+                    <input type="text" class="form-control" placeholder="00,00" id="price" name="price"
+                        value="{{gameEdit.price}}">
                 </div>
                 <div class="mb-3">
                     <label for="release_year" class="form-label">Ano de Lançamento</label>
-                    <input type="text" class="form-control" name="release_year" placeholder="" id="release_year" name="release_year" value="{{gameEdit.release_year}}">
+                    <input type="text" class="form-control" name="release_year" placeholder="" id="release_year"
+                        name="release_year" value="{{gameEdit.release_year}}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-md">Editar Jogo</button>
             </form>
@@ -149,19 +155,6 @@
     </section>
     {% endif %}
 
-    <section class="main-content">
-        <div class="delete-games">
-            <h1>Deletar Jogo</h1>
-            <p>Informe o ID do jogo que será deletado.</p>
-            <form action='/delete' method="POST">
-                <div class="mb-3">
-                    <label for="id" class="form-label">Id (Único)</label>
-                    <input type="text" class="form-control" name="id" placeholder="34">
-                </div>
-                <button type="submit" class="btn btn-primary">Deletar Jogo</button>
-            </form>
-        </div>
-    </section>
     <script src="../static/js/admin.js"></script>
 </body>
 
