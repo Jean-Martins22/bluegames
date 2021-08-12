@@ -557,6 +557,115 @@ table {
     height:100%;
 }
 
+#developers {
+    border: solid 1px black;
+    position: absolute;
+    display: flex;
+    z-index: 10;
+    background-color: rgba(245, 245, 245, 0.062);
+    justify-content: center;
+    margin: auto;
+    top:50px;
+    left:18%;
+    width: 1050px;
+    height: 500px;
+    border-radius: 30px;
+    animation: 3s ease-in-out 0s 1 fromLeft;
+    backdrop-filter: blur(10px);
+    background-color: rgba(245, 245, 245, 0.062);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+
+#developers::before {
+    position: absolute;
+    width: 1050px;
+    height: 500px;
+    content: "";
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(45deg, black, grey);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+#developers:hover::before {
+    opacity: 0;
+    background: linear-gradient(90deg, black, grey);
+}
+
+#developers::after {
+    content: "";
+    position: absolute;
+    width: 1050px;
+    height: 500px;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(60deg, blue, red);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+#developers:hover::after {
+    opacity: 1;
+    background: linear-gradient(45deg, blue, red);
+
+}
+
+section#dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    font-style: italic
+}
+
+  .profile-card{
+    padding: 10px;
+    margin: 0 1rem;
+    box-shadow: rgba(222, 235, 248, 0.2) 0px 8px 24px;
+    z-index: 20;
+    border-radius: 25px;
+  }
+  
+  section#dev div h2 {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  section#dev div img {
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+  }
+
+   .links{
+    display: flex;
+    background: none;
+    border: none;
+    justify-items: space-between;
+  }
+
+  #profile-photos{
+    height: 80px;
+  }
+
+  #profile-description{
+    max-width: 700px;
+    max-height: 700px;
+    font-size: 11px;
+  }
 
 @keyframes fromLeft {
     0% {
