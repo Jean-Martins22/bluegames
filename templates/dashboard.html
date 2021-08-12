@@ -10,23 +10,19 @@
 </head>
 
 <body>
-    <header>
-        <div id="header-menu">
-            <a class='menu-item' href="">
-                <img src="../static/img/profile.png" alt="">
-            </a>
-        </div>
-    </header>
     <section id="">
         <nav id='side-menu'>
             <div class="form-outline search">
                 <input type="search" id="search" class="form-control" placeholder="" />
             </div>
-            <a class='menu-item' onclick="sectionDisplay('home'); sectionHide('all-games')">
+            <a class='menu-item' onclick="sectionDisplay('home'); sectionHide('all-games');sectionHide('developers')">
                 <img src="../static/img/home.png" alt="" class='image-icons'>
             </a>
-            <a class='menu-item' onclick="sectionDisplay('all-games'); sectionHide('home')">
+            <a class='menu-item' onclick="sectionDisplay('all-games'); sectionHide('home');sectionHide('developers')">
                 <img src="../static/img/view all.png" alt="" class='image-icons'>
+            </a>
+            <a class='menu-item' onclick="sectionDisplay('developers')">
+                <img src="../static/img/staff.png" alt="" class='image-icons'>
             </a>
             <a class="menu-item" onclick="" href="/admin">
                 <img src="../static/img/settings.png" alt="" class="image-icons">
@@ -90,27 +86,18 @@
                                 onclick="document.getElementById('game-info2').style.display='flex';">
                                 Details
                             </button>
-
                         </div>
-
-
-
                         <div class='card'>
-
                             <img src="/static/img/capa-godofwar.jpg" alt="" class="card-img">
-
                             <h5>
                                 God Of War
                             </h5>
-                            
                             <a href='https://store.playstation.com/pt-br/product/UP9000-CUSA07408_00-00000000GODOFWAR/'>
                                 <img src='/static/img/playstation.png'></a>
-
                             <button class='btn  btn-primary details'
                                 onclick="document.getElementById('game-info3').style.display='flex';">
                                 Details
                             </button>
-
                         </div>
                     </div>
                 </div>
@@ -173,7 +160,7 @@
     </div>
     <div class="overlay game-info" id="game-info1">
         <h2>Marvel's Spider-Man: Myles Morales</h2>
-        <button class='btn close-button' style='background-color: #F85251; ;'
+        <button class='btn close-button'
             onclick="document.getElementById('game-info1').style.display= 'none';">
             X
         </button>
@@ -191,7 +178,7 @@
     <div class="overlay game-info" id="game-info2">
         <h2>League Of Legends</h2>
 
-        <button class='btn close-button' style='background-color: #F85251; ;'
+        <button class='btn close-button'
             onclick="document.getElementById('game-info2').style.display= 'none';">
             X
         </button>
@@ -211,7 +198,7 @@
     <div class="overlay game-info" id="game-info3">
         <h2>God Of War</h2>
 
-        <button class='btn close-button' style='background-color: #F85251; ;'
+        <button class='btn close-button' 
             onclick="document.getElementById('game-info3').style.display= 'none';">
             X
         </button>
@@ -234,7 +221,7 @@
         <section id="dev">
             
             <div class="profile-card">
-                <button class='btn close-button' style='background-color: #F85251; ;'
+                <button class='btn btn-primary close-button' 
             onclick="document.getElementById('developers').style.display= 'none';">
             X
                 </button>
