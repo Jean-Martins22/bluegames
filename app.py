@@ -6,7 +6,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tmdbmgbz:TaQhYFew5JO6OxG_X
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
 class Games(db.Model):
     id = db.Column(
         db.Integer,
