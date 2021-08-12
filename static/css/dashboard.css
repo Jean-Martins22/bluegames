@@ -78,26 +78,26 @@ header {
     z-index: 10;
 }
 
+
 #header-menu a {
     display: flex;
     width: 50px;
-    height: 50px;
-    background-color: #007bff;
     transition: background-color .5s ease-in-out;
     margin: 0;
     margin-top: 20px;
-    border-radius: 25px;
-}
+    border-radius: 19px;
+} */
 
 #header-menu a img {
+
     display: block;
     margin: auto;
-    height: 35px;
-}
+
+ } 
 
 #header-menu a:hover {
     transition: background-color .5s ease-in-out;
-    background-color: #0056b3;
+    background-color: #0056b3; 
 }
 
 .search {
@@ -196,23 +196,36 @@ header {
 }
 
 .banner-block {
+    background-image: url(/style/img/capa-spiderman.jpg);
+    background-size: cover;
     position: absolute;
-    width: 950px;
+    width: 1010px;
     height: 300px;
+    border-radius: 30px;
+    
 }
 
-.text-banner {
+.text-banner{
     position: absolute;
     top: 10%;
     left: 5%;
+<<<<<<< Updated upstream:static/css/dashboard.css
+=======
+
+
+>>>>>>> Stashed changes:style/css/style.css
 }
 
+.text-banner h2{
+    font-weight: bold;
+}
 .brand-new {
     width: 40px;
-    background-color: black;
+    background-color: #F85251;
     text-align: center;
     color: white;
-    font-weight: 900;
+    font-size: 15px;
+    font-weight: bold ;
     border-radius: 3px;
 }
 
@@ -221,11 +234,12 @@ header {
     bottom: 10%;
     display: flex;
     left: 5%;
-    background-color: black;
+    background-color: #2D2F3C;
     width: 20%;
     align-items: center;
     height: 60px;
-    border-radius: 10px;
+    font-weight: bold;
+    border-radius: 20px;
 }
 
 price {
@@ -238,6 +252,9 @@ price {
     right: 5%;
     padding: 10px;
     z-index: 10;
+    border-radius: 20px!important;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .banner-img {
@@ -250,33 +267,56 @@ price {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-left:;
 }
-
+.new-games h2 {
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+}
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    margin-left: 20px;
+    justify-content: space-around;
     z-index: 1;
 }
 
 .new-games .card {
     flex-wrap: wrap;
+<<<<<<< Updated upstream:static/css/dashboard.css
     margin: 1.2em;
     width: 270px;
     height: 270px;
     backdrop-filter: blur(1px);
     background-color: rgba(245, 245, 245, 0.062);
+=======
+    margin-top: 1%;
+    margin-inline: 30px;
+    width: 300px;
+    height: 230px;
+    background-color: #191B1F;
+    border: none;
+    /* backdrop-filter: blur(1px);
+    background-color: #191B1F;
+>>>>>>> Stashed changes:style/css/style.css
     -webkit-backdrop-filter: blur(20px);
     -webkit-box-shadow: 0 8px 6px -6px black;
     -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0 8px 6px -6px black;
+<<<<<<< Updated upstream:static/css/dashboard.css
     border-radius: 30px;
     justify-content: center;
     animation: 2s ease-in-out 0s 1 fromBottom;
+=======
+    border-radius: 30px; */
+    /* justify-content: center;
+    animation: 2s ease-in-out 0s 1 fromBottom; */
+
+>>>>>>> Stashed changes:style/css/style.css
 }
 
-.new-games .card::before {
+/* .new-games .card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -292,14 +332,14 @@ price {
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     transition: opacity 2s ease-out;
-}
+} */
 
-.new-games .card:hover::before {
+/* .new-games .card:hover::before {
     opacity: 0;
     background: linear-gradient(90deg, black, grey);
-}
+} */
 
-.new-games .card::after {
+/* .new-games .card::after {
     content: "";
     position: absolute;
     top: 0;
@@ -316,7 +356,7 @@ price {
     mask-composite: exclude;
     opacity: 0;
     transition: opacity 1s ease-out;
-}
+} */
 
 .new-games .card:hover::after {
     opacity: 1;
@@ -325,16 +365,35 @@ price {
 
 
 .card-img {
+<<<<<<< Updated upstream:static/css/dashboard.css
     margin: 0 auto 1.3em auto;
     width: 50%;
+=======
+    display: block;
+    margin-top: 0;
+    margin-left: 0  ;
+    margin-right: auto;
+    border-radius: 25px;
+>>>>>>> Stashed changes:style/css/style.css
     max-height: 150px;
+    max-width: 200px;
 }
 
 .card h5 {
+<<<<<<< Updated upstream:static/css/dashboard.css
     margin: 0 auto 1.3em auto;
+=======
+    display: block;
+    margin-top: 5%;
+    padding-left: 0;
+    margin-right: auto;
+    margin-bottom: 1%;
+>>>>>>> Stashed changes:style/css/style.css
     text-align: center;
-    width: 80%;
+    font-weight: bold;
+    font-size: 1rem;
 }
+
 
 .card .add-cart {
     display: block;
@@ -357,6 +416,9 @@ price {
     justify-content: center;
 }
 
+.card img {
+    max-width: 200px;
+}
 .card .add-cart div {
     display: flex;
     content: "";
@@ -378,7 +440,7 @@ price {
 }
 
 
-.card .add-cart::before {
+/* .card .add-cart::before {
     content: "";
     position: absolute;
     top: 0;
@@ -394,7 +456,7 @@ price {
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     transition: opacity 2s ease-out;
-}
+} */
 
 .card .add-cart:hover::before {
     opacity: 0;
