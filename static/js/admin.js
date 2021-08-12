@@ -17,6 +17,8 @@ function displayListgames(){
     deltIcon.style.backgroundColor = '#191B1F'
 };
 
+addcIcon.addEventListener('click', () => {displayAddgames()});
+
 function displayAddgames(){
     document.querySelector('.list-games').style.display = 'none';
     document.querySelector('.add-games').style.display = 'block';
@@ -29,26 +31,27 @@ function displayAddgames(){
 };
 
 editIcon.addEventListener('click', () => {displayEditgames()});
-// editLink.addEventListener('click', () => {displayEditgames()});
 
 function displayEditgames(){
     document.querySelector('.list-games').style.display = 'none';
     document.querySelector('.add-games').style.display = 'none';
     document.querySelector('.edit-games').style.display = 'block';
     document.querySelector('.delete-games').style.display = 'none';
-    listIcon.style.backgroundColor = '#191B1F'
-    addcIcon.style.backgroundColor = '#191B1F'
-    editIcon.style.backgroundColor = 'black'
+    listIcon.style.backgroundColor = '#191B1F';
+    addcIcon.style.backgroundColor = '#191B1F';
+    editIcon.style.backgroundColor = 'black';
     deltIcon.style.backgroundColor = '#191B1F'
 };
+
+deltIcon.addEventListener('click', () => {displayDeletegames()});
 
 function displayDeletegames(){
     document.querySelector('.list-games').style.display = 'none';
     document.querySelector('.add-games').style.display = 'none';
     document.querySelector('.edit-games').style.display = 'none';
     document.querySelector('.delete-games').style.display = 'block';
-    listIcon.style.backgroundColor = '#191B1F'
-    addcIcon.style.backgroundColor = '#191B1F'
-    editIcon.style.backgroundColor = '#191B1F'
+    listIcon.style.backgroundColor = '#191B1F';
+    addcIcon.style.backgroundColor = '#191B1F';
+    editIcon.style.backgroundColor = '#191B1F';
     deltIcon.style.backgroundColor = 'black'
 };

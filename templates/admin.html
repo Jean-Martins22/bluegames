@@ -16,12 +16,12 @@
 
     <section >
         <nav id="side-menu">
-            <a class='menu-item'>
+            <a class='menu-item' href="/admin">
                 <i class='bx bx-list-ul'></i>
                 <p>Listar</p>
             </a>
-            <a class='menu-item add-click'>
-                <i class='bx bx-plus'></i>
+            <a class='menu-item add-click' onclick='displayAddgames()' >
+                <i class='bx bx-plus '></i>
                 <p>Adicionar</p>
             </a>
             <a class='menu-item edit-click'>
@@ -32,13 +32,13 @@
                 <i class='bx bx-trash'></i>
                 <p>Deletar</p>
             </a>
-            <a class='menu-item delete-click' href="dashboard">
+            <a class='menu-item delete-click' href="/dashboard">
                 <i class='bx bx-log-out-circle'></i>
                 <p>Sair</p>
             </a>
         </nav>
     </section>
-
+    {% if gameEdit == undefined %}
     <section class="main-content">
         <div class="list-games">
             <h1>Listagem dos jogos</h1>
@@ -66,7 +66,7 @@
                         <td>{{ game.release_year }}</td>
                         <td>
                             <a href="/admin/{{game.id}}" class="edit-href">Editar</a>
-                            <a href="/admin/delete/{{game.id}}">Apagar</a>
+                            <a href="/delete/{{game.id}}">Apagar</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -74,7 +74,8 @@
             </table>
         </div>
     </section>
-    {% if gameEdit == undefined %}
+    {% endif %}
+
     <section class="main-content">
         <div class="add-games">
             <h1>Adicionar Novo Jogo</h1>
@@ -82,43 +83,41 @@
             <form action='/add' method="POST">
                 <div class="mb-3">
                     <label for="title" class="form-label">Título</label>
-                    <input type="text" class="form-control" name="title" placeholder="Mario Kart 8">
+                    <input type="text" class="form-control" name="title" placeholder="Game name">
                 </div>
                 <div class="mb-3">
                     <label for="max_players" class="form-label">Nº Máximo de Jogadores</label>
-                    <input type="text" class="form-control" name="max_players" placeholder="4">
+                    <input type="text" class="form-control" name="max_players" placeholder="Integer">
                 </div>
                 <div class="mb-3">
                     <label for="genre" class="form-label">Gênero</label>
-                    <input type="text" class="form-control" name="genre" placeholder="Corrida">
+                    <input type="text" class="form-control" name="genre" placeholder="Genre">
                 </div>
                 <div class="mb-3">
                     <label for="publisher" class="form-label">Publicadora</label>
-                    <input type="text" class="form-control" name="publisher" placeholder="Nintendo">
+                    <input type="text" class="form-control" name="publisher" placeholder="Publisher name">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Preço</label>
-                    <input type="text" class="form-control" name="price" placeholder="34.90">
+                    <input type="text" class="form-control" name="price" placeholder="$$.$$">
                 </div>
                 <div class="mb-3">
                     <label for="release_year" class="form-label">Ano de Lançamento</label>
-                    <input type="text" class="form-control" name="release_year" placeholder="2018">
+                    <input type="text" class="form-control" name="release_year" placeholder="YYYY">
                 </div>
                 <button type="submit" class="btn btn-primary btn-md">Adicionar Jogo</button>
             </form>
         </div>
     </section>
-    {% endif %}
 
     {% if gameEdit != undefined %}
     <section class="main-content">
         <div class="edit-games">
             <h1>Editar Jogo</h1>
             <p>Informe o ID do jogo em seguida dos campos já atualizados.</p>
-            <form action='/edit' method="POST">
+            <form action='/admin/{{gameEdit.id}}' method="POST">
                 <div class="mb-3">
-                    <label for="id" class="form-label">Id</label>
-                    <input type="text" class="form-control" placeholder="Id" id="id" name="id" value="{{gameEdit.id}}">
+                    <h2>Id nº {{gameEdit.id}}</h2>
                 </div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Game Title</label>
@@ -138,11 +137,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="text" class="form-control" placeholder="00,00" id="price" name="price" value="price">
+                    <input type="text" class="form-control" placeholder="00,00" id="price" name="price" value="{{gameEdit.price}}">
                 </div>
                 <div class="mb-3">
                     <label for="release_year" class="form-label">Ano de Lançamento</label>
-                    <input type="text" class="form-control" name="release_year" placeholder="2018">
+                    <input type="text" class="form-control" name="release_year" placeholder="" id="release_year" name="release_year" value="{{gameEdit.release_year}}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-md">Editar Jogo</button>
             </form>
