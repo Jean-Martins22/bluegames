@@ -564,7 +564,7 @@ table {
     position: absolute;
     top: 100px;
 }
-#game-info div{
+.game-info div{
     position: absolute;
     top: 50%;
     right: 10%;
@@ -572,17 +572,22 @@ table {
     height: 50%;
     
 }
-#game-info img{
+.game-info iframe{
     position: absolute;
     top: 50%;
     left: 10%;
+    width: 35%;
+    height: 45%;
+    border-radius: 25px;
 }
-#game-info h2{
+.game-info h2{
     position: absolute;
     top: 20%;
     left: 10%;
+    font-weight: bolder;
+    font-size: xx-large;
 }
-#game-info .btn-primary{
+.game-info .btn-primary{
     position: absolute;
     right: 0;
 }
@@ -704,7 +709,11 @@ section#dev {
     max-height: 700px;
     font-size: 11px;
   }
-
+  
+  .iframe-youtube{
+      display: flex;
+      justify-content: flex-start;
+  }
 @keyframes fromLeft {
     0% {
         transform: translateX(-150%);

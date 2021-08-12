@@ -64,16 +64,16 @@
                     <div class="cards">
                         <div class='card'>
 
-                            <img src="/static/img/battleground.jpg" alt="" class="card-img">  
+                            <img src="/static/img/capa-spiderman3.jpg" alt="" class="card-img">  
 
-                            <h5>
-                                PUBG - Battleground
+                            <h5 >
+                                Marvel's Spider-Man
                             </h5>
-                            <a href='https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/'> <img src='/static/img/steam.png' ></a>
+                            <a href='https://www.playstation.com/pt-br/games/marvels-spider-man/?emcid=or-1s-412983'> <img src='/static/img/playstation.png' ></a>
 
 
                             <button class='btn  btn-primary details ' 
-                                onclick="document.getElementById('game-info').style.display='flex' ;">
+                                onclick="document.getElementById('game-info1').style.display='flex' ;">
                                 Details
                             </button>
                         </div>
@@ -89,7 +89,7 @@
                             <a href='https://br.leagueoflegends.com/pt-br/'> <img src='/static/img/windows10.png' ></a>
 
                             <button class='btn  btn-primary details'
-                                onclick="document.getElementById('game-info').style.display='flex';">
+                                onclick="document.getElementById('game-info2').style.display='flex';">
                                 Details
                             </button>
 
@@ -107,7 +107,7 @@
                             <a href='https://store.playstation.com/pt-br/product/UP9000-CUSA07408_00-00000000GODOFWAR/'> <img src='/static/img/playstation.png' ></a>
 
                             <button class='btn  btn-primary details'
-                                onclick="document.getElementById('game-info').style.display='flex';">
+                                onclick="document.getElementById('game-info3').style.display='flex';">
                                 Details
                             </button>
 
@@ -143,7 +143,7 @@
     <div class="overlay" id="shopping-cart">
         <h2>Carrinho</h2>
         <button class="close-button btn-primary"
-            onclick=""">
+            onclick="">
             <span></span>
         </button>
         <table class="table table-dark">
@@ -172,19 +172,41 @@
             </tbody>
         </table>
     </div>
-    <div class="overlay" id="game-info">
-        <h2>Nome</h2>
-        <img src="https://dummyimage.com/300x200/000/fff" alt="">
+    <div class="overlay game-info" id="game-info1">
+        <h2>Marvel's Spider-Man: Myles Morales</h2>
+        
+        <iframe src="https://www.youtube.com/embed/xJQI7BYDkV8" ></iframe>		    
+        
         <div class="about-game">
-            <h4>Sobre o jogo:</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an</p>
-            <button class="btn-primary">Comprar</button>
+            <h4>Sobre:</h4>
+            <p>O risco em Marvel’s New York aumenta, e o Prefeito Norman Osborn não está disposto a arriscar nada em sua campanha para reeleição. Ele contrata Silver Sable e sua força tarefa, a Silver Sable International, para restaurar ordem à cidade - e isto inclui deter alguém que ele acredita estar contribuindo ao caos: Spider-Man.</p>
+        </div>
+
+    </div>
+    <div class="overlay game-info" id="game-info2">
+        <h2>League Of Legends</h2>
+        
+        <iframe src="https://www.youtube.com/embed/vzHrjOMfHPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>		    
+        
+        <div class="about-game">
+            <h4>Sobre:</h4>
+            <p>League of Legends, comumente referido como League, é um videogame multiplayer online de arena de batalha desenvolvido e publicado pela Riot Games. Inspirados por Defense of the Ancients, um mapa personalizado para Warcraft III, os fundadores da Riot procuraram desenvolver um jogo autônomo do mesmo gênero.</p>
+        </div>
+
+    </div>
+    <div class="overlay game-info" id="game-info3">
+        <h2>God Of War</h2>
+        
+        <iframe src="https://www.youtube.com/embed/K0u_kAWLJOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>		    
+        
+        <div class="about-game">
+            <h4>Sobre:</h4>
+            <p>God of War é uma franquia de jogos de ação e aventura criada por David Jaffe no Santa Monica Studio da Sony. Tudo começou em 2005 no console de videogame PlayStation 2 e se tornou um título carro-chefe para a marca PlayStation, consistindo em oito jogos em várias plataformas, com um nono atualmente em desenvolvimento.</p>
         </div>
 
     </div>
 
-    <div id="developers">
+    <!-- <div id="developers">
         <section id="dev">
             
             <div class="profile-card">
@@ -243,7 +265,7 @@
              </div>
         </section>
 
-    </div>
+    </div> -->
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
