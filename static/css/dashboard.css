@@ -271,7 +271,7 @@ price {
     font-weight: bold;
     font-size: 30px;
 }
-
+ 
 .cards {
     display: flex;
     width: 1010px;
@@ -598,12 +598,18 @@ table {
 
 #all-games{
     display:none;
+    position: absolute;
     padding-left: 10%;
     padding-top: 25px;
     width: 95%;
     height:100%;
 }
-
+#all-games .new-games{
+    top:-10%;
+}
+#all-games .new-games .card{
+    margin-bottom: 30px;
+}
 #developers {
     border: solid 1px black;
     position: absolute;

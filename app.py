@@ -1,10 +1,19 @@
 from flask import Flask, render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+import os
+
+
+
+
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nope:TaQhYFew5JO6OxG_X3Vwq-UyP5FzqmTL@kesavan.db.elephantsql.com/nope'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tmdbmgbz:TaQhYFew5JO6OxG_X3Vwq-UyP5FzqmTL@kesavan.db.elephantsql.com/tmdbmgbz'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+@app.context_processor
+def handle_context():
+    return dict(os=os)
 
 class Games(db.Model):
     id = db.Column(
