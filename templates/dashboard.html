@@ -102,6 +102,7 @@
                             <h5>
                                 God Of War
                             </h5>
+                            
                             <a href='https://store.playstation.com/pt-br/product/UP9000-CUSA07408_00-00000000GODOFWAR/'>
                                 <img src='/static/img/playstation.png'></a>
 
@@ -172,7 +173,10 @@
     </div>
     <div class="overlay game-info" id="game-info1">
         <h2>Marvel's Spider-Man: Myles Morales</h2>
-
+        <button class='btn close-button' style='background-color: #F85251; ;'
+            onclick="document.getElementById('game-info1').style.display= 'none';">
+            X
+        </button>
         <iframe src="https://www.youtube.com/embed/xJQI7BYDkV8"></iframe>
 
         <div class="about-game">
@@ -186,6 +190,11 @@
     </div>
     <div class="overlay game-info" id="game-info2">
         <h2>League Of Legends</h2>
+
+        <button class='btn close-button' style='background-color: #F85251; ;'
+            onclick="document.getElementById('game-info2').style.display= 'none';">
+            X
+        </button>
 
         <iframe src="https://www.youtube.com/embed/vzHrjOMfHPY" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -202,6 +211,11 @@
     <div class="overlay game-info" id="game-info3">
         <h2>God Of War</h2>
 
+        <button class='btn close-button' style='background-color: #F85251; ;'
+            onclick="document.getElementById('game-info3').style.display= 'none';">
+            X
+        </button>
+
         <iframe src="https://www.youtube.com/embed/K0u_kAWLJOA" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
@@ -216,10 +230,14 @@
 
     </div>
 
-    <!-- <div id="developers">
+    <div id="developers">
         <section id="dev">
             
             <div class="profile-card">
+                <button class='btn close-button' style='background-color: #F85251; ;'
+            onclick="document.getElementById('developers').style.display= 'none';">
+            X
+                </button>
                     <img id='profile-photos' src="../static/img/Akylles Barros.png" alt="Foto do Akylles Barros">
                <h2>Akylles</h2>
                <p id='profile-description'>Como eu posso estar quebrando as regras se eu nem as conheço</p>
@@ -275,7 +293,7 @@
              </div>
         </section>
 
-    </div> -->
+    </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
